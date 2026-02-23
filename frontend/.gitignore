@@ -1,0 +1,28 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+.eslintcache
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+.vscode/*
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+.env.local
+
+.DS_Store (macOS용)
+Thumbs.db (Windows용)

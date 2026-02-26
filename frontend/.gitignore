@@ -21,8 +21,14 @@ dist-ssr
 *.sln
 *.sw?
 
+# Production / Build
+dist/
+dist-ssr/
+
+# Environment Variables (보안 핵심)
 .env
 .env.local
+.env.*.local
 
-.DS_Store (macOS용)
-Thumbs.db (Windows용)
+.DS_Store
+Thumbs.db

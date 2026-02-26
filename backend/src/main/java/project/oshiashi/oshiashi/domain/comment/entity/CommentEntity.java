@@ -11,12 +11,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "Comment",
-				indexes = {
-								@Index(name = "IX_comment_post", columnList = "post_id"),
-								@Index(name = "IX_comment_user", columnList = "user_id"),
-								@Index(name = "IX_comment_created_at", columnList = "created_at")
-				}
+		name = "Comment",
+		indexes = {
+				@Index(name = "IX_comment_post", columnList = "post_id"),
+				@Index(name = "IX_comment_user", columnList = "user_id"),
+				@Index(name = "IX_comment_created_at", columnList = "created_at")
+		}
 )
 public class CommentEntity {
 
@@ -27,17 +27,17 @@ public class CommentEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "post_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_comment_post")
+			name = "post_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_comment_post")
 	)
 	private PostEntity post;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "user_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_comment_user")
+			name = "user_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_comment_user")
 	)
 	private UserEntity user;
 

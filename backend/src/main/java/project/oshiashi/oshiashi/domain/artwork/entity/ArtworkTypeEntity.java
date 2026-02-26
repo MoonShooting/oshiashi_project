@@ -7,10 +7,10 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "Artwork_type",
-				uniqueConstraints = {
-								@UniqueConstraint(name = "UX_artwork_type_name", columnNames = "artwork_type_name")
-				}
+		name = "Artwork_type",
+		uniqueConstraints = {
+				@UniqueConstraint(name = "UX_artwork_type_name", columnNames = "artwork_type_name")
+		}
 )
 public class ArtworkTypeEntity {
 

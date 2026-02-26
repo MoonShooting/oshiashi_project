@@ -10,15 +10,15 @@ import java.math.BigDecimal;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "Spot",
-				uniqueConstraints = {
-								// 작품 내에서 같은 장소명이 중복되는 걸 막고 싶으면 유지 (원치 않으면 삭제)
-								@UniqueConstraint(name = "UX_spot_artwork_name", columnNames = {"artwork_id", "name"})
-				},
-				indexes = {
-								@Index(name = "IX_spot_artwork", columnList = "artwork_id"),
-								@Index(name = "IX_spot_lat_lng", columnList = "latitude,longitude")
-				}
+		name = "Spot",
+		uniqueConstraints = {
+				// 작품 내에서 같은 장소명이 중복되는 걸 막고 싶으면 유지 (원치 않으면 삭제)
+				@UniqueConstraint(name = "UX_spot_artwork_name", columnNames = {"artwork_id", "name"})
+		},
+		indexes = {
+				@Index(name = "IX_spot_artwork", columnList = "artwork_id"),
+				@Index(name = "IX_spot_lat_lng", columnList = "latitude,longitude")
+		}
 )
 public class SpotEntity {
 
@@ -29,9 +29,9 @@ public class SpotEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "artwork_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_spot_artwork")
+			name = "artwork_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_spot_artwork")
 	)
 	private ArtworkEntity artwork;
 

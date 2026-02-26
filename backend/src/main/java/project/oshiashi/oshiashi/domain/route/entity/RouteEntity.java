@@ -21,9 +21,9 @@ public class RouteEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "user_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_Route_User")
+			name = "user_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_Route_User")
 	)
 	private UserEntity user;
 

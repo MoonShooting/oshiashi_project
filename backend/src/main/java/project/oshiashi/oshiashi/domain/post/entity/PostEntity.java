@@ -23,17 +23,17 @@ public class PostEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "user_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_Post_User")
+			name = "user_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_Post_User")
 	)
 	private UserEntity user;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "route_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_Post_Route")
+			name = "route_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_Post_Route")
 	)
 	private RouteEntity route;
 

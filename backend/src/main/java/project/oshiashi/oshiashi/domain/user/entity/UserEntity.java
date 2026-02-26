@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Check;
 import project.oshiashi.oshiashi.domain.post.entity.PostEntity;
 
 import java.time.LocalDateTime;
@@ -14,11 +15,11 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "User",
-				uniqueConstraints = {
-								@UniqueConstraint(name = "UX_User_Email", columnNames = "email"),
-								@UniqueConstraint(name = "UX_User_Nickname", columnNames = "nickname")
-				}
+		name = "User",
+		uniqueConstraints = {
+				@UniqueConstraint(name = "UX_User_Email", columnNames = "email"),
+				@UniqueConstraint(name = "UX_User_Nickname", columnNames = "nickname")
+		}
 )
 public class UserEntity {
 
@@ -52,6 +53,7 @@ public class UserEntity {
 	@OneToMany(mappedBy = "user")
 	private List<PostEntity> posts = new ArrayList<>();
 
-	public enum Role { USER, ADMIN }
-	public enum UserStatus { ACTIVE, DORMANT, BANNED, DELETED }
+
+  public enum Role {user, admin}
+	public enum UserStatus {active, dormant}
 }

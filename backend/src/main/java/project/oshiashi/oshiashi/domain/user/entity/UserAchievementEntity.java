@@ -12,17 +12,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "User_achievement",
-				uniqueConstraints = {
-								@UniqueConstraint(
-												name = "uk_user_achievement",
-												columnNames = {"user_id", "achievement_id"}
-								)
-				},
-				indexes = {
-								@Index(name = "idx_user_achievement_user", columnList = "user_id"),
-								@Index(name = "idx_user_achievement_achievement", columnList = "achievement_id")
-				}
+		name = "User_achievement",
+		uniqueConstraints = {
+				@UniqueConstraint(
+						name = "uk_user_achievement",
+						columnNames = {"user_id", "achievement_id"}
+				)
+		},
+		indexes = {
+				@Index(name = "idx_user_achievement_user", columnList = "user_id"),
+				@Index(name = "idx_user_achievement_achievement", columnList = "achievement_id")
+		}
 )
 @EntityListeners(AuditingEntityListener.class)
 public class UserAchievementEntity {

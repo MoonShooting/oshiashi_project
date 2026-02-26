@@ -8,17 +8,17 @@ import project.oshiashi.oshiashi.domain.artwork.entity.ArtworkEntity;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "Tag",
-				uniqueConstraints = {
-								@UniqueConstraint(
-												name = "UX_tag_artwork_name",
-												columnNames = {"artwork_id", "tag_name"}
-								)
-				},
-				indexes = {
-								@Index(name = "IX_tag_artwork", columnList = "artwork_id"),
-								@Index(name = "IX_tag_name", columnList = "tag_name")
-				}
+		name = "Tag",
+		uniqueConstraints = {
+				@UniqueConstraint(
+						name = "UX_tag_artwork_name",
+						columnNames = {"artwork_id", "tag_name"}
+				)
+			},
+		indexes = {
+				@Index(name = "IX_tag_artwork", columnList = "artwork_id"),
+				@Index(name = "IX_tag_name", columnList = "tag_name")
+		}
 )
 public class TagEntity {
 

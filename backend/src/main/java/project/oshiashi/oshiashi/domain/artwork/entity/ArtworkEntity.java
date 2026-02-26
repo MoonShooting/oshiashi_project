@@ -3,17 +3,17 @@ package project.oshiashi.oshiashi.domain.artwork.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter
+@Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(
-				name = "Artwork",
-				uniqueConstraints = {
-								@UniqueConstraint(name = "UX_artwork_title", columnNames = "title")
-				},
-				indexes = {
-								@Index(name = "IX_artwork_type", columnList = "artwork_type_id")
-				}
+		name = "Artwork",
+		uniqueConstraints = {
+		@UniqueConstraint(name = "UX_artwork_title", columnNames = "title")
+		},
+		indexes = {
+			@Index(name = "IX_artwork_type", columnList = "artwork_type_id")
+		}
 )
 public class ArtworkEntity {
 
@@ -36,9 +36,9 @@ public class ArtworkEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(
-					name = "artwork_type_id",
-					nullable = false,
-					foreignKey = @ForeignKey(name = "FK_artwork_artwork_type")
+			name = "artwork_type_id",
+			nullable = false,
+			foreignKey = @ForeignKey(name = "FK_artwork_artwork_type")
 	)
 	private ArtworkTypeEntity artworkType;
 }
